@@ -19,8 +19,7 @@
 <main>
 
     <div class="container marketing">
-        <!-- START THE FEATURETTES -->
-        <hr class="featurette-divider">
+
 
         <div class="row featurette">
             <div class="col-md-7">
@@ -59,11 +58,8 @@
             </div>
         </div>
 
-        <hr class="featurette-divider">
 
-        <!-- /END THE FEATURETTES -->
-
-    </div><!-- /.container -->
+    </div>
 @endsection
 
 

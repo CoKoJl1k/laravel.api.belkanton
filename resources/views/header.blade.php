@@ -2,30 +2,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Megaton</title>
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>Carousel Template · Bootstrap v5.0</title>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
-
     <!-- Bootstrap core CSS -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
       <style>
-          /*
-          .bd-placeholder-img {
-              font-size: 1.125rem;
-              text-anchor: middle;
-              -webkit-user-select: none;
-              -moz-user-select: none;
-              user-select: none;
-          }
-
-          @media (min-width: 768px) {
-              .bd-placeholder-img-lg {
-                  font-size: 3.5rem;
-              }
-          }*/
           #myCarousel{
               height: 600px;
           }
@@ -38,16 +23,36 @@
               top:80px;
              z-index: 1;
           }
+          .btn-primary {
+              background-color: #414141;
+              border: #414141;
+              color: white !important;
+              width: 200px;
+          }
+          .btn-primary:hover{
+              background-color: #565656;
+          }
+a{
+    color: #565656;
+    text-decoration: none;
+}
+          a:hover{
+              color: #A6A6A6;
+              text-decoration: none;
+          }
+
+
       </style>
  </head>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img class="logo-footer" src="storage/images/logo2.svg" width="100"  height="50" alt="logo-footer" data-at2x="assets/img/logo.png"></a>
 
         @if(auth()->check() && auth()->user()->status == 'admin'): ?>
-            <a class="navbar-brand" href="{{route('dashboard')}}">ADMIN DASHBOARD</a>
+            <a class="navbar-brand" href="{{route('dashboard')}}">Admin</a>
         @endif
-        <a class="navbar-brand" href="/">MEGATON</a>
+
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -58,7 +63,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Products</a>
+                    <a class="nav-link active" aria-current="page" href="product">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="contacts">Contacts</a>

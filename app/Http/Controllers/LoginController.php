@@ -25,7 +25,6 @@ class LoginController extends Controller
             if (auth()->user()->status == 'admin'){
                 return redirect()->route('dashboard');
             } else {
-                session()->flash('success' , 'Вы успешно вошли.' );
                 return redirect()->route('main');
             }
 
