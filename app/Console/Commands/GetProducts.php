@@ -24,7 +24,7 @@ class GetProducts extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Get products from API';
 
     /**
      * Create a new command instance.
@@ -38,7 +38,7 @@ class GetProducts extends Command
     }
 
     /**
-     * Execute the console command.
+     * Get products from API
      *
      * @param string $api_url
      * @return void

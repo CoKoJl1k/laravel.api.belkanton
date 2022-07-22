@@ -21,7 +21,7 @@ class TruncateProductsTable extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Truncate products table';
 
     /**
      * Create a new command instance.
@@ -34,7 +34,7 @@ class TruncateProductsTable extends Command
     }
 
     /**
-     * Execute the console command.
+     * Truncate products table
      *
      * @return void
      */
