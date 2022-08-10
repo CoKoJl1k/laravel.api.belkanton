@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-
 use App\Models\Product;
 use Illuminate\Console\Command;
 use Throwable;
@@ -40,7 +39,6 @@ class TruncateProductsTable extends Command
      */
     public function handle(): void
     {
-
         try {
             Product::truncate();
             $this->line("Success!");
@@ -50,7 +48,5 @@ class TruncateProductsTable extends Command
             $this->error('File: '.$e->getFile());
             $this->error('Line: '.$e->getLine());
         }
-
     }
-
 }

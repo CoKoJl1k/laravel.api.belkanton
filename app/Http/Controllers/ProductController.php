@@ -14,7 +14,12 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('product');
+        //$products = DB::table('products')->whereNotNull('image')->get();
+        $products = Product::whereNotNull('set_id')->paginate(12);
+       // $products = DB::table('products')->whereNull('set_id')->get();
+       //dd($products);
+
+        return view('product',['products' => $products]);
     }
 
 

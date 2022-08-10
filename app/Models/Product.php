@@ -19,6 +19,8 @@ class Product extends Model
         'name',
         'catalog_id',
         'code',
+        'set_id',
+        'vendor_code',
         'measures',
         'manufacturer',
         'country_import',

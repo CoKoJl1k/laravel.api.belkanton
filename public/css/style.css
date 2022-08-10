@@ -1,0 +1,28 @@
+a.navbar-brand{
+    font-size: initial;
+}
+
+
+li.page-item.active .page-link{
+    background-color:#7d838b ;
+    border-color:#7d838b;
+}
+.page-link{
+    color:#565656;
+}
+.page-link:hover{
+    color:#565656;
+}
+.page-link:focus{
+    color:#565656;
+    text-decoration: none;
+}
+.js_catalog-list{
+    margin-top:80px;
+}
+.justify-content-center{
+    margin-top:25px;
+}
+
+
+

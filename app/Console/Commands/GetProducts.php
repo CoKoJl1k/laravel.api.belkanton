@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use App\Models\Product;
 use Exception;
 use Illuminate\Console\Command;
-
 use Illuminate\Support\Facades\Log;
 use Throwable;
 
@@ -50,12 +49,12 @@ class GetProducts extends Command
             $arrResponse = $this->getProductsFromApi($api_url);
             $totalRows = Product::count();
             if (empty($api_url)) {
-                $totalPages = round(($arrResponse['meta']['total'] - 59500) / 100);
+                $totalPages = round(($arrResponse['meta']['total'] /*- 24500*/) / 100);
                 // $totalPages = round(($responseArray['meta']['total'])/100);
                 $this->output->progressStart($totalPages);
             }
 
-            if ($arrResponse['meta']['total'] - 59500 > $totalRows) {
+            if ($arrResponse['meta']['total'] /*- 24500*/ > $totalRows) {
 
                 foreach ($arrResponse['data'] as $arrProduct) {
                     if (Product::find($arrProduct['id'])) {
@@ -123,16 +122,19 @@ class GetProducts extends Command
     {
         Product::create([
             'id' => $arrProduct['id'],
-            'name' => $arrProduct['name'],
             'catalog_id' => $arrProduct['catalog_id'],
             'code' => $arrProduct['code'],
-            'measures' => serialize($arrProduct['measures']),
+            'set_id' => $arrProduct['id_mini_group'],
+            'vendor_code' => $arrProduct['vendor_code'],
+            'name' => $arrProduct['name'],
+           'measures' => serialize($arrProduct['measures']),
             'manufacturer' => $arrProduct['manufacturer'],
             'country_import' => $arrProduct['country_import'],
             'country_origin' => $arrProduct['country_origin'],
             'warranty' => $arrProduct['warranty'],
             'barcode' => $arrProduct['barcode'],
             'image' => $arrProduct['image'],
+            'images' => serialize($arrProduct['images']),
             'properties' => serialize($arrProduct['properties']),
             'prices' => serialize($arrProduct['prices']),
             'quantity' => $arrProduct['quantity'],

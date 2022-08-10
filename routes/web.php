@@ -5,6 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SearchController;
+use App\Models\Product;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -32,11 +34,11 @@ Route::get('/', function () {
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contacts', [MainController::class, 'contacts'])->name('contacts');
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 Route::group(['middleware' => 'admin','prefix' => 'admin'], function () {
-
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-
+    Route::get('/products', [AdminController::class, 'products'])->name('admin.products');
 });
 
 Route::get('/registration', [RegisterController::class, 'index'])->name('registration.index');
@@ -47,5 +49,18 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+//Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+
+
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+
+
+
+Route::get('/test', function (){
+    try {
+        echo 'hello';
+    }catch (Throwable $e){
+        echo $e->getMessage();
+    }
+});
 
