@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
@@ -36,6 +37,10 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contacts', [MainController::class, 'contacts'])->name('contacts');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
+Route::get('/search', [ProductController::class, 'index']);
+Route::post('/search_ajax',[AjaxController::class, 'index']);
+
+
 Route::group(['middleware' => 'admin','prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/products', [AdminController::class, 'products'])->name('admin.products');
@@ -51,9 +56,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
-
 Route::get('/search', [SearchController::class, 'index'])->name('search');
-
 
 
 Route::get('/test', function (){

@@ -1,6 +1,4 @@
-
 @include('admin.header')
-
 @include('success_message')
 @include('errors')
 

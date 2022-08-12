@@ -1,6 +1,4 @@
-
 @include('admin.header')
-
 @include('success_message')
 @include('errors')
 
@@ -12,13 +10,13 @@
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
+                        <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">
                             <span data-feather="home"></span>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/orders">
                             <span data-feather="file"></span>
                             Orders
                         </a>
@@ -30,7 +28,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/users">
                             <span data-feather="users"></span>
                             Customers
                         </a>
@@ -54,8 +52,7 @@
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
-
-            <h2>Section title</h2>
+            <h2>Products</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
@@ -121,10 +118,7 @@
     {{  $products->onEachSide(1)->links('vendor.pagination.bootstrap-4')}}
 </div>
 
-
 @endsection
-
 @yield('admin.admin')
-
 @include('admin.footer')
 
